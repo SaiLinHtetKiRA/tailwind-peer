@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Tailwind Peer</title>
+    <style type="text/tailwindcss">
+        @theme{
+            --color-dark:#151515
+        }
+        *{
+            @apply transition-all duration-200 ease-out
+        }
+        :root{
+            @apply bg-dark flex h-screen items-center justify-center
+        }
+
+        input{
+            @apply outline-none text-emerald-300/80 tracking-widest placeholder-transparent bg-transparent font-bold text-sm border-2 border-emerald-300/80 rounded-2xl p-2
+        }
+       
+      </style>
+</head>
+<body>
+    <main class="">
+        <label for="inputField" class="relative">
+            <input type="email" class="peer" id="inputField" placeholder=" " >
+            <span class="absolute left-3 text-emerald-300/80 font-bold tracking-wider px-2 
+            -top-5 peer-focus:scale-80 bg-dark scale-80 
+            peer-focus:bg-dark peer-focus:-top-5  
+            peer-placeholder-shown:scale-100  peer-placeholder-shown:top-0 peer-placeholder-shown:bg-transparent ">Email</span>
+            <span class="absolute ml-5 mt-1 text-xs font-bold tracking-wider ml-3 text-red-400 -bottom-8 left-2 
+           hidden peer-invalid:block peer-placeholder-shown:hidden">Invalid Email</span>
+        </label>  
+    </main>
+</body>
+</html>
